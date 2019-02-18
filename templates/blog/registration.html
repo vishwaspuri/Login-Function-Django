@@ -1,0 +1,38 @@
+{% extends 'blog/base.html' %}
+{% load staticfiles %}
+
+
+{% block body_block %}
+	<div class="dubba">
+        {% if registered %}
+            <h1>Thank you for registering!</h1>
+        {% else %}
+            <h1>Register here!</h1>
+            <form method="post" enctype="multipart/form-data">
+            <div class="container" align="left">
+                {% csrf_token %}
+                {{ user_form.as_p }}
+                {{ profile_form.as_p }}
+                <input type="submit" name="" value="Register">
+            </div>
+            </form>
+        {% endif %}
+	</div>
+	<style type="text/css">
+        h1{
+            text-align: center;
+        }
+		.dubba{
+			border-radius: 10px;
+			border: 2px solid black;
+			background-color: white;
+			font-family: sans-serif;
+			text-align: center;
+			height: 300px;
+			width:  1200px;
+			margin-top: 50px;
+			margin-left: 100px;
+			box-shadow: 5px 10px;
+		}
+	</style>
+{% endblock %}

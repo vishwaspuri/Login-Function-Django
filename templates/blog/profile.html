@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% extends "blog/base.html" %}
+{% block block_body %}
+{% if user.is_authenticated %}
+    <div class="dubba">
+        <h3>User: {{ user.username }}</h3>
+        <h3>Email: {{ user.email }}</h3>
+	</div>
+	<style type="text/css">
+        h1{
+            text-align: center;
+        }
+		.dubba{
+			border-radius: 10px;
+			border: 2px solid black;
+			background-color: white;
+			font-family: sans-serif;
+			text-align: center;
+			height: 300px;
+			width:  1200px;
+			margin-top: 50px;
+			margin-left: 100px;
+			box-shadow: 5px 10px;
+		}
+	</style>
+{% endif %}
+{% endblock %}
